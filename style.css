@@ -1,0 +1,53 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f4f4f9 url('https://images.hive.blog/DQmXfW33cKHuJyA3bBSypLujcQDeqXRmba857h3tJWV3sF1/tumblr_ll6dzx0cjI1qfdig2o1_500_large.gif') no-repeat center center fixed;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    color: #fff;
+    text-align: center;
+    margin-top: 20%;
+    font-size: 2.5rem;
+    background-color: #1413137a;
+}
+
+#listaMonstros {
+    list-style: none;
+    padding: 0;
+    max-width: 80%;
+    margin: 40px auto 0 auto;
+    background: #141313a8;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+#listaMonstros li {
+    padding: 12px 12px;
+    border-bottom: 5px solid #eee;
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-align: center;
+    color: #eee;
+    transition: background 0.2s;
+}
+
+#listaMonstros p {
+    text-align: left;
+    font-size: 0.9rem;
+    padding: 10px 5px;
+    margin: 3px 0px;
+    font-weight: normal;
+    color: #a7a7a7;
+    background: #35353595;
+}
+
+#listaMonstros li:last-child {
+    border-bottom: none;
+}
+
+#listaMonstros li:hover {
+    background: #8e8f8f86;
+}

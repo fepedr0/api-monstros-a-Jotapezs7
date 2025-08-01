@@ -1,0 +1,12 @@
+[
+    {
+        "id": 1,
+        "nome": "James P. Sullivan",
+        "descricao": "Monstro gigante similar a um minotauro peludo com dois chifres na cabeça. Ele tem imensa massa de gordura e pelos azulados com manchas púrpuras. Seus pés e mãos possuem pequenas garras além de dentes afiados escondidos dentro da boca. Seu rabo é grosso e pontudo igual ao de um dinossauro. Ele mede 2,28 m e pesa 360 kg.",
+        "tipo_criatura": "Minotauro Peludo",
+        "pontos_vida": 15,
+        "ataque": 1,
+        "defesa": 3,
+        "habitat": "Universidade Monstros S.A."
+    }
+]
