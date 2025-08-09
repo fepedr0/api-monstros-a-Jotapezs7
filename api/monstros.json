@@ -1,19 +1,19 @@
 [
     {
         "id": 1,
-        "nome": "Goddblin",
-        "imagem": "https://distortionsunlimited.com/cdn/shop/files/goblin-legend-prop-sq.jpg?v=1737397465",
-        "descricao": "Uma criatura pequena e astuta, conhecida por emboscadas.",
-        "tipo_criatura": "Humanoide",
+        "nome": "Sea eater",
+        "imagem": "https://preview.redd.it/who-is-your-fav-trevor-henderson-creature-mine-is-sea-eater-v0-iv5gty131okd1.jpeg?auto=webp&s=b65e460161b6946773bfb827fd570d753a2bf223",
+        "descricao": "Uma criatura massiva que fica nos oceanos devorando tudo no seu caminho, inclusive o próprio oceano.",
+        "tipo_criatura": "Grotesca",
         "pontos_vida": 10,
         "ataque": 5,
         "defesa": 2,
-        "habitat": "Masmorras e florestas"
+        "habitat": "Oceano"
     },
     {
         "id": 2,
         "nome": "Dragão Vermelho",
-        "imagem": "https://thumbs.dreamstime.com/b/feche-um-grande-drag%C3%A3o-vermelho-com-escalas-e-olhos-brilhantes-criatura-misteriosa-monstro-r%C3%A9ptil-da-besta-assustadora-380632620.jpg",
+        "imagem": "https://uploads.spiritfanfiction.com/historias/capitulos/201812/fundacao-scp-15177459-171220181231.jpg",
         "descricao": "Uma fera colossal que cospe fogo, temida por reinos.",
         "tipo_criatura": "Besta",
         "pontos_vida": 200,
