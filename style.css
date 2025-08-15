@@ -12,19 +12,23 @@
 }
 
 .menu-title {
-    color: #fff;
-    font-size: 1rem;
-    font-weight: bold;
     margin: 8px 30px;
     text-align: center;
     background: none;
     padding: 0;
-    /* padding-right: 30px; */
-    border-radius: 0;
+    color: #ff0000;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+.menu-title:hover{
+    background: rgb(94, 23, 23);
+    color: #000000;
 }
 
 .menu-link {
-    color: #fff;
+    color: #ff0000;
     text-decoration: none;
     font-weight: bold;
     font-size: 1rem;
@@ -83,13 +87,14 @@
     margin-left: 2px;
 }
 .menu-link:hover {
-    background: #447;
-    color: #fff;
+
     box-shadow: 0 2px 8px #0002;
+    background: rgb(94, 23, 23);
+    color: #000000;
 }
 body {
     font-family: Arial, Helvetica, sans-serif;
-    background: #f4f4f9 url('https://images.hive.blog/DQmXfW33cKHuJyA3bBSypLujcQDeqXRmba857h3tJWV3sF1/tumblr_ll6dzx0cjI1qfdig2o1_500_large.gif') no-repeat center center fixed;
+    background: #f4f4f9 url('https://preview.redd.it/breaking-news-made-in-garrys-mod-original-by-trevor-v0-9yb0td3x7guc1.jpeg?auto=webp&s=89bed1077bc8115b9427e828f7120a819abe48c6') no-repeat center center fixed;
     background-size: cover;
     margin: 0;
     padding: 0;

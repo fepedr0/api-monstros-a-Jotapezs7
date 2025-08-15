@@ -25,6 +25,20 @@ app.get('/monstros', (req, res) => {
     res.json(monstros);
 });
 
+
+//GRUPO SCP
+
+
+app.get('/monstros/random', (req, res) => {
+    const index = Math.floor(Math.random()* monstros.length);
+    res.json(monstros[index]);
+if (monstros.length > 0) {
+    res.status(404).json({erro: 'Nenhum monstro encontrado'});
+} else{
+       
+}
+});
+
 // --- Iniciar o Servidor ---
 
 // Faz o aplicativo Express começar a "escutar" por requisições na porta definida.
