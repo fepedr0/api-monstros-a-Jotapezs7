@@ -6,66 +6,69 @@ const cors = require('cors');
 const app = express();
 app.use(cors({ origin: '*' }));
 
-// 3. Definir a porta em que o servidor irá escutar
-// Usamos process.env.PORT para compatibilidade com ambientes de hospedagem (como Heroku)
-// ou a porta 3000 como padrão se a variável de ambiente não estiver definida.
+// 3. Definir a porta
 const PORT = process.env.PORT || 3000;
 
-// --- Dados Temporários em Memória ---
-// Agora os monstros são carregados de um arquivo JSON externo.
+// 4. Carregar os dados dos monstros
 const monstros = require('./monstros.json');
 
 // --- Rotas da API ---
 
-// Rota GET para listar todos os monstros
-// Quando alguém fizer uma requisição GET para a URL base + '/monstros'
-// (ex: http://localhost:3000/monstros), esta função será executada.
+// GET /monstros — listar monstros com filtros opcionais
 app.get('/monstros', (req, res) => {
-    const tipo_criatura = req .query.tipo_criatura;
-    const pontos_vidaMin = req .query.pontos_vida_min;
-    const pontos_vidaMax = req.query.pontos_vida_max;
-    const buscaTexto = req.query.q;
+    const { tipo_criatura, pontos_vida_min, pontos_vida_max, ataque_min, ataque_max, habitat, q } = req.query;
 
-    let resultado = monstro;
+    let resultado = [...monstros];
 
-    if (tipoCriatura) {
-        resultado = resultado.filter(m => m.tipo_criatura = tipo_criatura);
+    if (tipo_criatura) {
+        resultado = resultado.filter(m => m.tipo_criatura === tipo_criatura);
     }
-    for (pontosVidaMin) {
-        resultado = resultado.filter(m => m.ponto_vida < Number(pontos_vida_min));
-    
-    if (pontosVidaMax) {
-        resultado = resultado.filter(m => m.pontos_vida > Number(pontos_vida_max));
+
+    if (pontos_vida_min) {
+        resultado = resultado.filter(m => m.pontos_vida >= Number(pontos_vida_min));
     }
-    else (buscaTexto) {
-        const texto = buscaTexto.toLowerCase ();
-        resultado = resultado.filter(m => m.nome && m.nome.toLowerCase() .includes(texto))
-        (m.descricao && m.descricao.toLowerCase() .includes (texto));
+
+    if (pontos_vida_max) {
+        resultado = resultado.filter(m => m.pontos_vida <= Number(pontos_vida_max));
     }
+
+    if (ataque_max) {
+        resultado = resultado.filter(m => m.ataque <= Number(ataque_max))
+    }
+
+    if (ataque_min) {
+        resultado = resultado.filter(m => m.ataque >= Number(ataque_min));
+    }
+
+    if (habitat) {
+        resultado = resultado.filter(m =>
+            m.habitat && m.habitat.toLowerCase() === habitat.toLowerCase()
+        );
+    }
+
+    if (q) {
+        const texto = q.toLowerCase();
+        resultado = resultado.filter(m =>
+            (m.nome && m.nome.toLowerCase().includes(texto)) ||
+            (m.descricao && m.descricao.toLowerCase().includes(texto))
+        );
+    }
+
+
     res.json(resultado);
+});
 
-    // Retorna a array de monstros como uma resposta JSON
-    res.json(monstros);
-}});
-//Zuckerberg
-
-
-//GRUPO SCP
-
-
+// GET /monstros/random — retorna um monstro aleatório
 app.get('/monstros/random', (req, res) => {
-    const index = Math.floor(Math.random()* monstros.length);
+    if (monstros.length === 0) {
+        return res.status(404).json({ erro: 'Nenhum monstro encontrado' });
+    }
+
+    const index = Math.floor(Math.random() * monstros.length);
     res.json(monstros[index]);
-if (monstros.length > 0) {
-    res.status(404).json({erro: 'Nenhum monstro encontrado'});
-} else{
-       
-}
 });
 
 // --- Iniciar o Servidor ---
-
-// Faz o aplicativo Express começar a "escutar" por requisições na porta definida.
 app.listen(PORT, () => {
     console.log(`Servidor rodando na porta ${PORT}`);
     console.log(`Acesse: http://localhost:${PORT}/monstros`);
